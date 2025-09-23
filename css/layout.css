@@ -149,14 +149,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
 
-  /* div { 
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    height: auto;
-  }
- */
-
   a {
     color: rgb(var(--ids__text-RGB));
     font-size: 0;
@@ -505,7 +497,109 @@ footer {
     }
   }
 
+  a {
+    color: rgb(var(--ids__text-RGB));
+    font-size: 0;
+    text-decoration: none;
+    position: relative;
+    padding: 0;
+    margin: 0 0 0 1rem;
+    border: none;
+    display: inline-block;
+    background-color: rgb(var(--ids__background-RGB), 0.8);
+
+    @media (width < 767px) {
+      margin: 0 0 0 0.3rem;
+    }
+    overflow: hidden;
+    
+    .top span, .bottom span {
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      transition: transform 0.3s ease, color 0.3s ease;
+      color: rgb(var(--ids__text-RGB));
+      text-decoration: none;
+
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .bottom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(100%);
+    }
+
+    &:hover .top span {
+      transform: translateY(-100%);
+    }
+    &:hover .bottom span {
+      transform: translateY(-100%);
+    }
+
+    /* Задаём волновую задержку */
+    .top span:nth-child(1) { transition-delay: 0s; }
+    .top span:nth-child(2) { transition-delay: 0.25s; }
+    .top span:nth-child(3) { transition-delay: 0.05s; }
+    .top span:nth-child(4) { transition-delay: 0.75s; }
+    .top span:nth-child(5) { transition-delay: 0.1s; }
+    .top span:nth-child(6) { transition-delay: 0.125s; }
+    .top span:nth-child(7) { transition-delay: 0.15s; }
+    .top span:nth-child(8) { transition-delay: 0.175s; }
+
+    .bottom span:nth-child(1) { transition-delay: 0s; }
+    .bottom span:nth-child(2) { transition-delay: 0.25s; }
+    .bottom span:nth-child(3) { transition-delay: 0.05s; }
+    .bottom span:nth-child(4) { transition-delay: 0.75s; }
+    .bottom span:nth-child(5) { transition-delay: 0.1s; }
+    .bottom span:nth-child(6) { transition-delay: 0.125s; }
+    .bottom span:nth-child(7) { transition-delay: 0.15s; }
+    .bottom span:nth-child(8) { transition-delay: 0.175s; }
+  }
+
+  p {
+    padding: 0;
+    border: none;
+    display: inline-block;
+    background-color: rgb(var(--ids__background-RGB), 0.8);
+
+    font-weight: 200;
+  }
+
+  #footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+
+    #footer-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+
+      .footer-icon {
+        width: 2em;
+        height: 2em;
+        fill: none;
+        stroke: none;
+        cursor: pointer;
+        position: relative;
+        
+        path {
+          fill: rgb(var(--ids__background-RGB));
+          transition: fill 0.3s ease;
+
+        }
+        &:hover path{
+          fill: rgb(var(--ids__text-RGB));
+        }
+      }
+    }
+  }
 }
+
 
 
 
@@ -519,18 +613,27 @@ footer {
   h1 {
     font-size: 4em;
     padding: 0 2em;
+
+    @media (width < 767px) {
+      font-size: 2em;
+      padding: 0 1em;
+    }
   }
   
   #carousel {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 1em;
+    gap: 3em;
 
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-left: 7em;
+    padding: 0 7em;
+
+    @media (width < 767px) {
+      padding: 0 2em;
+    }
 
     scrollbar-width: none;
     &::-webkit-scrollbar {
