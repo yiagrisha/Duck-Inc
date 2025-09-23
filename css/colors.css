@@ -1,0 +1,26 @@
+
+:root {
+  --ids__text-RGB:        35, 31, 32;
+  --ids__link-RGB:        0, 100, 240;
+  --ids__hover-RGB:       0, 200, 0;
+  --ids__accent-RGB:      linear-gradient(135deg, rgb(249, 168, 66), rgb(240, 90, 42));
+  --ids__code-RGB:        115, 120, 125;
+  --ids__mark-RGB:        211, 32, 39;
+  --ids__surface-RGB:     211, 32, 39;
+  --ids__background-RGB:  255, 242, 233;
+}
+
+body {
+  color: rgba(var(--ids__text-RGB), 1);
+  background-color: rgba(var(--ids__background-RGB), 1);
+}
+
+::selection {
+  background-color: rgb(var(--ids__mark-RGB));
+  color: rgb(var(--ids__background-RGB));
+}
+
+::-moz-selection {
+  background-color: rgb(var(--ids__mark-RGB));
+  color: rgb(var(--ids__background-RGB));
+}
