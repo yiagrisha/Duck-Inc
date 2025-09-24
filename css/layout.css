@@ -430,6 +430,8 @@ header {
 
   #fourthBlockText {
     width: 100%;
+    max-width: 60em;
+    margin: 0 auto;
     height: auto;
     
     display: flex;
@@ -790,6 +792,9 @@ footer {
     justify-content: space-between;
 
     @media (width < 767px) {
+      display: none;
+    }
+    @media (width > 2200px) {
       display: none;
     }
     button {
