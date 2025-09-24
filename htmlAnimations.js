@@ -32,10 +32,10 @@ let green = document.querySelector('#green')
 document.addEventListener('scroll', function() {
    let progress = window.scrollY / (body.getBoundingClientRect().height)
 
-   gray.style.bottom = (-25 + (progress * 120)) + 'em'
+   gray.style.bottom = (-25 + (progress * 106)) + 'em'
    white.style.bottom = (-16 + (progress * 50)) + 'em'
    ogar.style.bottom = (-50 + (progress * 180)) + 'em'
-   green.style.bottom = (-25 + (progress * 120)) + 'em'
+   green.style.bottom = (-35 + (progress * 120)) + 'em'
 })
 
 
@@ -107,35 +107,40 @@ function splitTextToLetters(rootEl) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  splitTextToLetters(document.querySelector('#fourthBlock #fourthBlockText #animatedText'))
+  const animatedText = document.querySelector('#animatedText')
+  splitTextToLetters(animatedText)
+
+  
+  setTimeout(()=> {
+     const chars = document.querySelectorAll('#animatedText .char')
+     gsap.registerPlugin(ScrollTrigger)
+        
+      gsap.to(chars, {
+         opacity: 1,
+         stagger: 0.03,
+         ease: "power1.out",
+         scrollTrigger: {
+            trigger: "#fourthBlock",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true,
+            pin: "#fourthBlockText"/* ,
+            pinSpacing: false */
+         }
+      })
+   
+      gsap.to("#fourthBlock p", {
+         opacity: 1,
+         stagger: 0.03,
+         ease: "power1.out",
+         scrollTrigger: {
+            trigger: "#fourthBlock",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: true
+         }
+      })
+  }, 100)
 })
 
 
-setTimeout(()=> {
-   gsap.registerPlugin(ScrollTrigger)
-   
-   gsap.to("#animatedText span", {
-     opacity: 1,
-     stagger: 0.02,
-     ease: "power1.out",
-     scrollTrigger: {
-       trigger: "#fourthBlock",
-       start: "top top",
-       end: "bottom bottom",
-       scrub: true
-     }
-   })
-
-   gsap.to("#fourthBlock p", {
-     opacity: 1,
-     stagger: 0.02,
-     ease: "power1.out",
-     scrollTrigger: {
-       trigger: "#fourthBlock",
-       start: "top top",
-       end: "bottom bottom",
-       scrub: true
-     }
-   })
-
-}, 100)

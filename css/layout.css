@@ -417,30 +417,31 @@ header {
 #fourthBlock {
   display: block;
   position: relative;
+
   height: 300vh;
   max-height: 300vh;
   
-
-  z-index: 1;
   background: var(--ids__accent-RGB);
+  z-index: 1;
 
   @media (width < 767px) {
-      overflow-x: hidden;
-    }
+    overflow-x: hidden;
+  }
 
   #fourthBlockText {
-    position: sticky;
-    top: 43%;
-  
-    transform: translateY(-30%);
-
-    width: 100vh;
+    width: 100%;
+    height: auto;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 
     @media (width < 767px) {
-      overflow-x: hidden;
+      height: 50vh;
+      transform: none;
+      top: 0;
+      justify-content: flex-start;
     }
 
     p {
@@ -460,7 +461,7 @@ header {
       width: 70%;
       max-width: 60em;
       text-align: center;
-      font-size: 4em;
+      font-size: 3.5em;
       text-transform: uppercase;
       line-height: 0.9em;
       color: rgb(var(--ids__background-RGB));
@@ -494,7 +495,7 @@ header {
   display: inline-block;
 
   opacity: 0;
-  line-height: 1;
+  line-height: 1em;
   vertical-align: middle;
 }
 
@@ -659,17 +660,17 @@ footer {
 #productBlock {
   position: relative;
   
-  height: auto;
+  height: 100vh;
   max-height: 900em;
   
   
   h1 {
     font-size: 4em;
-    padding: 0 2em;
+    padding: 0 2.5em;
 
     @media (width < 767px) {
       font-size: 2em;
-      padding: 0 1em;
+      padding: 0 0.5em;
     }
   }
   
@@ -682,10 +683,10 @@ footer {
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0 7em;
+    padding: 0 10em;
 
     @media (width < 767px) {
-      padding: 0 2em;
+      padding: 0 1em;
     }
 
     scrollbar-width: none;
@@ -695,24 +696,26 @@ footer {
 
     section {
       p {
-        font-size: 3em;
+        font-size: 1.3em;
         line-height: 1em;
         padding-left: 0.5em;
 
         align-content: center;
+
       }
       
+      
       img {
-        width: 25em;
+        width: 15em;
 
-        padding-bottom: 2em;
+        padding-bottom: 0.5em;
       }
 
       section {
         display: flex;
         flex-direction: row;
         gap: 1em;
-        padding-left: 1.5em;
+        padding-left: 1em;
 
         align-items: center;
 
@@ -727,6 +730,7 @@ footer {
           border-radius: 3em;
           border: none;
           background-color: rgb(var(--ids__surface-RGB), 0.8);
+
 
           svg {
             width: 100%;
@@ -750,6 +754,9 @@ footer {
           padding: 0;
         }
 
+        @media (width < 767px) {
+          padding: 0 0.5em;
+        }
       }
 
       @media (width < 767px) {
@@ -763,7 +770,7 @@ footer {
         img {
           width: 12em;
 
-          padding-bottom: 2em;
+          padding-bottom: 0.5em;
         }
       }
     }
@@ -772,11 +779,15 @@ footer {
 
   #scroll-buttons {
     position: absolute;
-    right: 2em;
-    bottom: 0;
+
+    top: 55%;
+    left: 5%;
+
+    width: 90%;
+
     display: flex;
     flex-direction: row;
-    gap: 1em;
+    justify-content: space-between;
 
     @media (width < 767px) {
       display: none;
