@@ -92,30 +92,32 @@
         </span>
       </div>
 
-      <div class="ids__wrapper full-screen" id="secondBlock">
-        <div class="ids__space XL"></div>
+      <div class="ids__wrapper" id="secondBlock">
+        <div class="ids__space L"></div>
         <div class="ids__text-width">
           <h1>Nutrition that speaks their language.</h1>
           <p>From ducklings to seniors, every formula is built to match real duck diets — fish, grains, insects, and greens.</p>
         </div>
         <div class="images">
-          <img src="./images/illustrations/gray.png" alt="">
-          <img src="./images/illustrations/white.png" alt="">
-          <img src="./images/illustrations/ogar.png" alt="">
-          <img src="./images/illustrations/green.png" alt="">
+          <img id="gray" src="./images/illustrations/gray.png" alt="">
+          <img id="white" src="./images/illustrations/white.png" alt="">
+          <img id="ogar" src="./images/illustrations/ogar.png" alt="">
+          <img id="green" src="./images/illustrations/green.png" alt="">
         </div>
         <div class="ids__space XL"></div>
       </div>
 
     <div class="ids__wrapper.XXL full-screen" id="fourthBlock">
-        <p>Designed for Ducks. Built for Joy.</p>
-        <h1>Duck Inc. was founded with a simple belief: ducks deserve the same care and attention as any pet. Our food is developed with nutritionists, our design with love, and our mission with humor.</h1>
+      <section id="fourthBlockText">
+        <p>Designed&nbsp;for&nbsp;Ducks. Built&nbsp;for&nbsp;Joy.</p>
+        <h1 id="animatedText">Duck Inc. was founded with a simple belief: ducks deserve the same care and attention as any pet. Our food is developed with nutritionists, our design with love, and our mission with humor.</h1>
+      </section>
     </div>
 
     <div class="ids__wrapper.XXL full-screen" id="productBlock">
       <div class="ids__space XL"></div>
       
-        <h1>Check out<br>our product section.</h1>
+        <h1>Check out<br>our&nbsp;product&nbsp;section.</h1>
         <div id="carousel">
           <section>
             <img src="images/Mockups/gray.png" alt="">
@@ -235,8 +237,8 @@
       <div class="ids__space XL"></div>
       <div class="section">
         <div class="ids__text-width">
-          <h1>Not just feed. A&nbsp;culture.</h1>
-          <p>Our posters celebrate the humor and spirit of ducks everywhere.<br>Collect them, share them, live with them.</p>
+          <h1>Not just feed.<br>A&nbsp;culture.</h1>
+          <p>Our posters celebrate the humor and&nbsp;spirit of ducks everywhere.<br>Collect&nbsp;them, share&nbsp;them, live&nbsp;with&nbsp;them.</p>
         </div>
         <ids-gallery>
           <figure>
@@ -260,12 +262,6 @@
     </div>
 
 
-      
-      
-      <div class="ids__wrapper" id="banner">
-          <h1>Good feed makes good moods — for ducks and for you.</h1>
-          <p>Shop Duck Inc. Today</p>
-      </div>
 
     </main>
 
@@ -541,6 +537,8 @@
       requestAnimationFrame(raf)
     </script> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="./htmlAnimations.js"></script>
   </body>
 </html>

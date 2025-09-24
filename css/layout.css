@@ -1,6 +1,10 @@
 html, body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  @media (width < 767px) {
+    overflow-x: hidden;
+  }
 }
 
 html::-webkit-scrollbar {
@@ -190,24 +194,23 @@ header {
       transform: translateY(-100%);
     }
 
-    /* Задаём волновую задержку */
-    .top span:nth-child(1) { transition-delay: 0s; }
-    .top span:nth-child(2) { transition-delay: 0.25s; }
-    .top span:nth-child(3) { transition-delay: 0.05s; }
-    .top span:nth-child(4) { transition-delay: 0.75s; }
-    .top span:nth-child(5) { transition-delay: 0.1s; }
-    .top span:nth-child(6) { transition-delay: 0.125s; }
-    .top span:nth-child(7) { transition-delay: 0.15s; }
-    .top span:nth-child(8) { transition-delay: 0.175s; }
+    .top span:nth-child(1) { transition-delay: 0s }
+    .top span:nth-child(2) { transition-delay: 0.04s }
+    .top span:nth-child(3) { transition-delay: 0.08s }
+    .top span:nth-child(4) { transition-delay: 0.12s }
+    .top span:nth-child(5) { transition-delay: 0.16s }
+    .top span:nth-child(6) { transition-delay: 0.2s }
+    .top span:nth-child(7) { transition-delay: 0.24s }
+    .top span:nth-child(8) { transition-delay: 0.28s }
 
-    .bottom span:nth-child(1) { transition-delay: 0s; }
-    .bottom span:nth-child(2) { transition-delay: 0.25s; }
-    .bottom span:nth-child(3) { transition-delay: 0.05s; }
-    .bottom span:nth-child(4) { transition-delay: 0.75s; }
-    .bottom span:nth-child(5) { transition-delay: 0.1s; }
-    .bottom span:nth-child(6) { transition-delay: 0.125s; }
-    .bottom span:nth-child(7) { transition-delay: 0.15s; }
-    .bottom span:nth-child(8) { transition-delay: 0.175s; }
+    .bottom span:nth-child(1) { transition-delay: 0s }
+    .bottom span:nth-child(2) { transition-delay: 0.04s }
+    .bottom span:nth-child(3) { transition-delay: 0.08s }
+    .bottom span:nth-child(4) { transition-delay: 0.12s }
+    .bottom span:nth-child(5) { transition-delay: 0.16s }
+    .bottom span:nth-child(6) { transition-delay: 0.2s }
+    .bottom span:nth-child(7) { transition-delay: 0.24s }
+    .bottom span:nth-child(8) { transition-delay: 0.28s }
   }
 
   p {
@@ -317,13 +320,20 @@ header {
 #secondBlock {
   z-index: -1;
   position: relative;
+  height: 40em;
+
+  @media (width < 767px) {
+    height: 30em;
+  }
+
 
   h1 {
+  
     font-size: 4em;
 
     @media (width < 767px) {
-        font-size: 2em;
-      }
+      font-size: 2em;
+    }
   }
 
   p {
@@ -341,27 +351,39 @@ header {
     }
 
     :nth-child(1) {
-      width: 17em;
-      bottom: -1em;
-      left: -12em;
+      width: 25em;
+      bottom: -100em;
+      left: -19em;
 
       @media (width < 767px) {
-        left: -10em;
+        width: 20em;
+        left: -13em;
+        bottom: -100em;
       }
     }
     :nth-child(2) {
-      width: 10em;
-      bottom: -1em;
+      width: 15em;
+      bottom: -100em;
       left: 9em;
+
+      @media (width < 767px) {
+        width: 11em;
+        left: 5em
+      }
     }
     :nth-child(3) {
-      width: 15em;
-      bottom: -4em;
+      width: 18em;
+      bottom: -100em;
       left: 25em;
+
+      @media (width < 767px) {
+        width: 15em;
+        left: 12em
+      }
     }
     :nth-child(4) {
       width: 20em;
-      bottom: -3em;
+      bottom: -100em;
       left: 45em;
     }
   }
@@ -393,63 +415,95 @@ header {
 }
 
 #fourthBlock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  position: relative;
+  height: 300vh;
+  max-height: 300vh;
+  
 
-  max-height: 90vh;
   z-index: 1;
-
   background: var(--ids__accent-RGB);
 
-  p {
-    text-align: center;
+  @media (width < 767px) {
+      overflow-x: hidden;
+    }
 
-    font-size: 1.2em;
-    color: rgb(var(--ids__background-RGB));
-  }
-  h1 {
-    width: 70%;
-    max-width: 60em;
-    text-align: center;
-    font-size: 4em;
-    text-transform: uppercase;
-    line-height: 0.9em;
-    color: rgb(var(--ids__background-RGB));
+  #fourthBlockText {
+    position: sticky;
+    top: 43%;
+  
+    transform: translateY(-30%);
+
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @media (width < 767px) {
+      overflow-x: hidden;
+    }
+
+    p {
+      text-align: center;
+  
+      font-size: 1.2em;
+      color: rgb(var(--ids__background-RGB));
+
+      opacity: 0;
+
+      @media (width < 767px) {
+        width: 90%;
+        padding: 0;
+      }
+    }
+    #animatedText {
+      width: 70%;
+      max-width: 60em;
+      text-align: center;
+      font-size: 4em;
+      text-transform: uppercase;
+      line-height: 0.9em;
+      color: rgb(var(--ids__background-RGB));
+
+
+      display: inline-block;
       width: 100%;
-      font-size: 2.5em;
+      padding: 0 2em;
+      align-content: center;
+  
+      @media (width < 767px) {
+        
+        width: 80%;
+        font-size: 2.2em;
+        padding: 0;
+      }
     }
   }
+
 }
 
-#banner {
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  margin: 0;
-  padding: 2em 1em;
-
-  height: fit-content;
-
-  background: var(--ids__accent-RGB);
-
-  h1 {
-    font-size: 1em;
-    font-weight: 400;
-    height: fit-content;
-    margin: 0;
-  }
-
-  p {
-    height: fit-content;
-    margin: 0;
-  }
+#fourthBlock h1 {
+  line-height: 0.9em;
 }
+
+#fourthBlock h1 .word {
+  display: inline-block;
+  white-space: nowrap;
+
+#fourthBlock h1 .char {
+  display: inline-block;
+
+  opacity: 0;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+#fourthBlock h1 [aria-hidden="true"] {
+  pointer-events: none;
+}
+
+
+
 
 footer {
   position: relative;
@@ -538,24 +592,23 @@ footer {
       transform: translateY(-100%);
     }
 
-    /* Задаём волновую задержку */
-    .top span:nth-child(1) { transition-delay: 0s; }
-    .top span:nth-child(2) { transition-delay: 0.25s; }
-    .top span:nth-child(3) { transition-delay: 0.05s; }
-    .top span:nth-child(4) { transition-delay: 0.75s; }
-    .top span:nth-child(5) { transition-delay: 0.1s; }
-    .top span:nth-child(6) { transition-delay: 0.125s; }
-    .top span:nth-child(7) { transition-delay: 0.15s; }
-    .top span:nth-child(8) { transition-delay: 0.175s; }
+    .top span:nth-child(1) { transition-delay: 0s }
+    .top span:nth-child(2) { transition-delay: 0.04s }
+    .top span:nth-child(3) { transition-delay: 0.08s }
+    .top span:nth-child(4) { transition-delay: 0.12s }
+    .top span:nth-child(5) { transition-delay: 0.16s }
+    .top span:nth-child(6) { transition-delay: 0.2s }
+    .top span:nth-child(7) { transition-delay: 0.24s }
+    .top span:nth-child(8) { transition-delay: 0.28s }
 
-    .bottom span:nth-child(1) { transition-delay: 0s; }
-    .bottom span:nth-child(2) { transition-delay: 0.25s; }
-    .bottom span:nth-child(3) { transition-delay: 0.05s; }
-    .bottom span:nth-child(4) { transition-delay: 0.75s; }
-    .bottom span:nth-child(5) { transition-delay: 0.1s; }
-    .bottom span:nth-child(6) { transition-delay: 0.125s; }
-    .bottom span:nth-child(7) { transition-delay: 0.15s; }
-    .bottom span:nth-child(8) { transition-delay: 0.175s; }
+    .bottom span:nth-child(1) { transition-delay: 0s }
+    .bottom span:nth-child(2) { transition-delay: 0.04s }
+    .bottom span:nth-child(3) { transition-delay: 0.08s }
+    .bottom span:nth-child(4) { transition-delay: 0.12s }
+    .bottom span:nth-child(5) { transition-delay: 0.16s }
+    .bottom span:nth-child(6) { transition-delay: 0.2s }
+    .bottom span:nth-child(7) { transition-delay: 0.24s }
+    .bottom span:nth-child(8) { transition-delay: 0.28s }
   }
 
   p {
@@ -724,6 +777,10 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 1em;
+
+    @media (width < 767px) {
+      display: none;
+    }
     button {
       display: flex;
       justify-content: center;
